@@ -5,6 +5,7 @@ import { describe, expect, it } from 'vitest'
 import { createAuth } from '../src'
 
 const { router, auth } = createAuth({
+  sameSite: 'strict',
   verify: (username, password) => {
     return username === 'admin' && password === 'admin'
   },
@@ -31,8 +32,10 @@ describe('route', () => {
       .post('/auth/login')
       .send({ username: 'admin', password: 'admin' })
     expect(res1.status).toBe(200)
-    const token = getToken(res1.headers['set-cookie'][0])
+    const header = res1.headers['set-cookie'][0]
+    const token = getToken(header)
     expect(typeof token).toBe('string')
+    expect(header).toContain('samesite=strict')
 
     const res2 = await agent
       .post('/auth/info')
