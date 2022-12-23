@@ -1,3 +1,4 @@
+import { type Context, type Next } from 'koa'
 import Router from '@koa/router'
 import {
   createAuthentication,
@@ -40,12 +41,12 @@ export function createAuth({ verify, secret, sameSite }: AuthOption) {
    */
   const auth = createAuthentication(secret)
   router.prefix('/auth')
-  router.post('/login', local, cookie, ctx => (ctx.status = 200))
-  router.post('/info', auth, (ctx) => {
+  router.post('/login', local, cookie, (ctx: Context) => (ctx.status = 200))
+  router.post('/info', auth, (ctx: Context) => {
     ctx.body = { username: ctx.state.user!.username }
     ctx.status = 200
   })
-  router.use((ctx, next) => next())
+  router.use((ctx: Context, next: Next) => next())
   return {
     /**
      * Router to provide `/login` and `/info` route

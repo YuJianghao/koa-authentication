@@ -11,8 +11,8 @@ importers:
       '@types/http-errors': ^1.8.2
       '@types/jsonwebtoken': ^8.5.8
       '@types/koa': ^2.13.4
-      '@types/koa-bodyparser': ^4.3.7
       '@types/koa__router': ^8.0.11
+      '@types/koa-bodyparser': ^4.3.7
       '@types/node': ^17.0.23
       '@types/supertest': ^2.0.12
       bumpp: ^7.1.1
@@ -41,8 +41,8 @@ importers:
       '@types/http-errors': registry.npmmirror.com/@types/http-errors/1.8.2
       '@types/jsonwebtoken': registry.npmmirror.com/@types/jsonwebtoken/8.5.8
       '@types/koa': registry.npmmirror.com/@types/koa/2.13.4
-      '@types/koa-bodyparser': registry.npmmirror.com/@types/koa-bodyparser/4.3.7
       '@types/koa__router': registry.npmmirror.com/@types/koa__router/8.0.11
+      '@types/koa-bodyparser': registry.npmmirror.com/@types/koa-bodyparser/4.3.7
       '@types/node': registry.npmmirror.com/@types/node/17.0.23
       '@types/supertest': registry.npmmirror.com/@types/supertest/2.0.12
       bumpp: registry.npmmirror.com/bumpp/7.1.1
